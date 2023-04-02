@@ -1,13 +1,8 @@
 import React from "react";
 
-import { getContrastingColor } from "../config/helpers";
-import { useSnapshot } from "valtio";
-import state from "../store";
-
 import CustomButton from "./CustomButton";
 
 const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
-  const snap = useSnapshot(state);
 
   const generateStyle = () => {
     return {
