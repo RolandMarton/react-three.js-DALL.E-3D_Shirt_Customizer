@@ -8,11 +8,11 @@ import CustomButton from "./CustomButton";
 
 const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
   const snap = useSnapshot(state);
-  
+
   const generateStyle = () => {
     return {
-      color: getContrastingColor(snap.color),
-    }
+      color: "#000",
+    };
   };
 
   return (

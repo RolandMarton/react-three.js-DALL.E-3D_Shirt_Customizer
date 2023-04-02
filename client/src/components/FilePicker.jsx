@@ -9,15 +9,15 @@ import CustomButton from "./CustomButton";
 const FilePicker = ({ file, setFile, readFile }) => {
   const snap = useSnapshot(state);
   const generateStyle = (type) => {
-    if(type === 'upload'){
+    if (type === "upload") {
       return {
         borderWidth: "1px",
         borderColor: snap.color,
-        color: getContrastingColor(snap.color),
+        color: "#000",
       };
-    } else if(type === 'label') {
+    } else if (type === "label") {
       return {
-        color: getContrastingColor(snap.color),
+        color: "#000",
       };
     }
   };
@@ -39,10 +39,7 @@ const FilePicker = ({ file, setFile, readFile }) => {
           Upload File
         </label>
 
-        <p
-          className="mt-2 text-xs truncate"
-          style={generateStyle("label")}
-        >
+        <p className="mt-2 text-xs truncate" style={generateStyle("label")}>
           {file === "" ? "No file selected" : file.name}
         </p>
       </div>
