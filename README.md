@@ -30,7 +30,7 @@ For pattern
 ## Stack
 - Vite - Frontend tool for creating and managing projects
 - Three.js - Powerful 3D graphics library
-- React with Typescript
+- React
 - React Three Fiber - Library for ThreeJS in React
 - Tailwindcss - Popular utility-first CSS styling framework
 - Framer Motion for Animation in React
