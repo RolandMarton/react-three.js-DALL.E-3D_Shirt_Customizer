@@ -1,8 +1,20 @@
 import React from "react";
 
+import { getContrastingColor } from "../config/helpers";
+import { useSnapshot } from "valtio";
+import state from "../store";
+
 import CustomButton from "./CustomButton";
 
 const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
+  const snap = useSnapshot(state);
+  
+  const generateStyle = () => {
+    return {
+      color: getContrastingColor(snap.color),
+    }
+  };
+
   return (
     <div className="aipicker-container">
       <textarea
@@ -11,6 +23,7 @@ const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
         className="aipicker-textarea"
+        style={generateStyle()}
       ></textarea>
       <div className="flex flex-wrap gap-3">
         {generatingImg ? (

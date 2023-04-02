@@ -1,8 +1,27 @@
 import React from "react";
 
+import { getContrastingColor } from "../config/helpers";
+import { useSnapshot } from "valtio";
+import state from "../store";
+
 import CustomButton from "./CustomButton";
 
 const FilePicker = ({ file, setFile, readFile }) => {
+  const snap = useSnapshot(state);
+  const generateStyle = (type) => {
+    if(type === 'upload'){
+      return {
+        borderWidth: "1px",
+        borderColor: snap.color,
+        color: getContrastingColor(snap.color),
+      };
+    } else if(type === 'label') {
+      return {
+        color: getContrastingColor(snap.color),
+      };
+    }
+  };
+
   return (
     <div className="filepicker-container">
       <div className="flex-1 flex flex-col">
@@ -12,11 +31,18 @@ const FilePicker = ({ file, setFile, readFile }) => {
           accept="image/*"
           onChange={(e) => setFile(e.target.files[0])}
         />
-        <label htmlFor="file-upload" className="filepicker-label">
+        <label
+          htmlFor="file-upload"
+          className="filepicker-label"
+          style={generateStyle("upload")}
+        >
           Upload File
         </label>
 
-        <p className="mt-2 text-gray-500 text-xs truncate">
+        <p
+          className="mt-2 text-xs truncate"
+          style={generateStyle("label")}
+        >
           {file === "" ? "No file selected" : file.name}
         </p>
       </div>
