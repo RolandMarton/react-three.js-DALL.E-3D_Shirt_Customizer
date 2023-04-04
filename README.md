@@ -3,6 +3,7 @@
 Create 3D product-based website in React using Three.js
 
 # URL 
+Status: Server has been shutdown :(
 
 https://customshirt.netlify.app/
 
