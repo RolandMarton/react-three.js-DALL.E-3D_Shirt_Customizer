@@ -2,11 +2,12 @@
 
 Create 3D product-based website in React using Three.js
 
-https://user-images.githubusercontent.com/88943189/229351825-02120780-8a9d-433a-a1bf-837645b3e24d.mp4
-
 # URL 
 
 https://customshirt.netlify.app/
+
+https://user-images.githubusercontent.com/88943189/229351825-02120780-8a9d-433a-a1bf-837645b3e24d.mp4
+
 
 # Cool prompts
 For logo
